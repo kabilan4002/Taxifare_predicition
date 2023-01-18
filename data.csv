@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://localhost:8889/edit/data.csv -->
+<html lang="en-us"><script src="chrome-extension://mjnbclmflcpookeapghfhapeffmpodij/injected_content.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <title>data.csv - Jupyter Text Editor</title>
+    <link id="favicon" rel="shortcut icon" type="image/x-icon" href="http://localhost:8889/static/base/images/favicon-file.ico?v=f9f0a782d7d67b3a57bf7dce251d771b405c7890604576ec8b9a621a39d7670f6b43ffabef1e566f1cd741ee302e15977d9e1cf60bbacebafe75787b9916415c">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./data_files/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="./data_files/jquery.typeahead.min.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+<link rel="stylesheet" href="./data_files/codemirror.css">
+<link rel="stylesheet" href="./data_files/dialog.css">
+
+    <link rel="stylesheet" href="./data_files/style.min.css" type="text/css">
+    
+
+    <link rel="stylesheet" href="./data_files/custom.css" type="text/css">
+    <script src="./data_files/promise.min.js.download" type="text/javascript" charset="utf-8"></script>
+    <script src="./data_files/react.production.min.js.download" type="text/javascript"></script>
+    <script src="./data_files/react-dom.production.min.js.download" type="text/javascript"></script>
+    <script src="./data_files/index.js.download" type="text/javascript"></script>
+    <script src="./data_files/require.js.download" type="text/javascript" charset="utf-8"></script>
+    <script>
+      require.config({
+          
+          urlArgs: "v=20230118174614",
+          
+          baseUrl: '/static/',
+          paths: {
+            'auth/js/main': 'auth/js/main.min',
+            custom : '/custom',
+            nbextensions : '/nbextensions',
+            kernelspecs : '/kernelspecs',
+            underscore : 'components/underscore/underscore-min',
+            backbone : 'components/backbone/backbone-min',
+            jed: 'components/jed/jed',
+            jquery: 'components/jquery/jquery.min',
+            json: 'components/requirejs-plugins/src/json',
+            text: 'components/requirejs-text/text',
+            bootstrap: 'components/bootstrap/dist/js/bootstrap.min',
+            bootstraptour: 'components/bootstrap-tour/build/js/bootstrap-tour.min',
+            'jquery-ui': 'components/jquery-ui/jquery-ui.min',
+            moment: 'components/moment/min/moment-with-locales',
+            codemirror: 'components/codemirror',
+            termjs: 'components/xterm.js/xterm',
+            typeahead: 'components/jquery-typeahead/dist/jquery.typeahead.min',
+          },
+          map: { // for backward compatibility
+              "*": {
+                  "jqueryui": "jquery-ui",
+              }
+          },
+          shim: {
+            typeahead: {
+              deps: ["jquery"],
+              exports: "typeahead"
+            },
+            underscore: {
+              exports: '_'
+            },
+            backbone: {
+              deps: ["underscore", "jquery"],
+              exports: "Backbone"
+            },
+            bootstrap: {
+              deps: ["jquery"],
+              exports: "bootstrap"
+            },
+            bootstraptour: {
+              deps: ["bootstrap"],
+              exports: "Tour"
+            },
+            "jquery-ui": {
+              deps: ["jquery"],
+              exports: "$"
+            }
+          },
+          waitSeconds: 30,
+      });
+
+      require.config({
+          map: {
+              '*':{
+                'contents': 'services/contents',
+              }
+          }
+      });
+
+      // error-catching custom.js shim.
+      define("custom", function (require, exports, module) {
+          try {
+              var custom = require('custom/custom');
+              console.debug('loaded custom.js');
+              return custom;
+          } catch (e) {
+              console.error("error loading custom.js", e);
+              return {};
+          }
+      })
+
+    document.nbjs_translations = {"domain": "nbjs", "locale_data": {"nbjs": {"": {"domain": "nbjs"}}}};
+    document.documentElement.lang = navigator.language.toLowerCase();
+    </script>
+
+    
+    
+
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="services/contents" src="./data_files/contents.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="custom/custom" src="./data_files/custom.js.download"></script></head>
+
+<body class="edit_app " data-base-url="/" data-file-path="data.csv" data-jupyter-api-token="c6aa0eb38844e11547ed851c036beadeacd5817a89a7cc06" dir="ltr">
+
+<noscript>
+    <div id='noscript'>
+      Jupyter Notebook requires JavaScript.<br>
+      Please enable it to proceed. 
+  </div>
+</noscript>
+
+<div id="header" role="navigation" aria-label="Top Menu" style="display: block;">
+  <div id="header-container" class="container">
+  <div id="ipython_notebook" class="nav navbar-brand"><a href="http://localhost:8889/tree?token=c6aa0eb38844e11547ed851c036beadeacd5817a89a7cc06" title="dashboard">
+      <img src="./data_files/logo.png" alt="Jupyter Notebook">
+  </a></div>
+
+  
+
+<span id="save_widget" class="pull-left save_widget">
+    <span class="filename">data.csv</span>
+    <div class="dirty-indicator-clean" title="No changes to save"></div><span class="last_modified" title="Wed, Jan 18, 2023 5:20 PM">27 minutes ago</span>
+</span>
+
+
+  
+
+  
+  
+  
+  
+
+    <span id="login_widget">
+      
+        <button id="logout" class="btn btn-sm navbar-btn">Logout</button>
+      
+    </span>
+
+  
+
+  
+  
+  </div>
+  <div class="header-bar"></div>
+
+  
+
+<div id="menubar-container" class="container">
+  <div id="menubar">
+    <div id="menus" class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+          <p class="navbar-text indicator_area">
+          <span id="current-mode">current mode</span>
+          </p>
+        <button type="button" class="btn btn-default navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <i class="fa fa-bars"></i>
+          <span class="navbar-text">Menu</span>
+        </button>
+        <ul class="nav navbar-nav navbar-right">
+          <li id="notification_area"><div id="notification_save" class="notification_widget btn btn-xs navbar-btn" style="display: none;"><span></span></div></li>
+        </ul>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown"><a href="http://localhost:8889/edit/data.csv#" class="dropdown-toggle" data-toggle="dropdown">File</a>
+              <ul id="file-menu" class="dropdown-menu">
+                <li id="new-file"><a href="http://localhost:8889/edit/data.csv#">New</a></li>
+                <li id="save-file"><a href="http://localhost:8889/edit/data.csv#">Save</a></li>
+                <li id="rename-file"><a href="http://localhost:8889/edit/data.csv#">Rename</a></li>
+                <li id="download-file"><a href="http://localhost:8889/edit/data.csv#">Download</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="http://localhost:8889/edit/data.csv#" class="dropdown-toggle" data-toggle="dropdown">Edit</a>
+              <ul id="edit-menu" class="dropdown-menu">
+                <li id="menu-find"><a href="http://localhost:8889/edit/data.csv#">Find</a></li>
+                <li id="menu-replace"><a href="http://localhost:8889/edit/data.csv#">Find &amp; Replace</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Key Map</li>
+                <li id="menu-keymap-default" class="selected-keymap"><a href="http://localhost:8889/edit/data.csv#">Default<i class="fa"></i></a></li>
+                <li id="menu-keymap-sublime"><a href="http://localhost:8889/edit/data.csv#">Sublime Text<i class="fa"></i></a></li>
+                <li id="menu-keymap-vim"><a href="http://localhost:8889/edit/data.csv#">Vim<i class="fa"></i></a></li>
+                <li id="menu-keymap-emacs"><a href="http://localhost:8889/edit/data.csv#">emacs<i class="fa"></i></a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="http://localhost:8889/edit/data.csv#" class="dropdown-toggle" data-toggle="dropdown">View</a>
+              <ul id="view-menu" class="dropdown-menu">
+              <li id="toggle_header" title="Show/Hide the logo and notebook title (above menu bar)">
+              <a href="http://localhost:8889/edit/data.csv#">Toggle Header</a></li>
+              <li id="menu-line-numbers"><a href="http://localhost:8889/edit/data.csv#">Toggle Line Numbers</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="http://localhost:8889/edit/data.csv#" class="dropdown-toggle" data-toggle="dropdown">Language</a>
+              <ul id="mode-menu" class="dropdown-menu">
+              <li><a href="http://localhost:8889/edit/data.csv#" title="Set language to APL">APL</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to PGP">PGP</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to ASN.1">ASN.1</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Asterisk">Asterisk</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Brainfuck">Brainfuck</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to C">C</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to C++">C++</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Cobol">Cobol</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to C#">C#</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Clojure">Clojure</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to ClojureScript">ClojureScript</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Closure Stylesheets (GSS)">Closure Stylesheets (GSS)</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to CMake">CMake</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to CoffeeScript">CoffeeScript</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Common Lisp">Common Lisp</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Cypher">Cypher</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Cython">Cython</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Crystal">Crystal</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to CSS">CSS</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to CQL">CQL</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to D">D</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Dart">Dart</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to diff">diff</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Django">Django</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Dockerfile">Dockerfile</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to DTD">DTD</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Dylan">Dylan</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to EBNF">EBNF</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to ECL">ECL</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to edn">edn</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Eiffel">Eiffel</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Elm">Elm</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Embedded Javascript">Embedded Javascript</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Embedded Ruby">Embedded Ruby</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Erlang">Erlang</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Esper">Esper</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Factor">Factor</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to FCL">FCL</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Forth">Forth</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Fortran">Fortran</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to F#">F#</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Gas">Gas</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Gherkin">Gherkin</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to GitHub Flavored Markdown">GitHub Flavored Markdown</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Go">Go</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Groovy">Groovy</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to HAML">HAML</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Haskell">Haskell</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Haskell (Literate)">Haskell (Literate)</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Haxe">Haxe</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to HXML">HXML</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to ASP.NET">ASP.NET</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to HTML">HTML</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to HTTP">HTTP</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to IDL">IDL</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Pug">Pug</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Java">Java</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Java Server Pages">Java Server Pages</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to JavaScript">JavaScript</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to JSON">JSON</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to JSON-LD">JSON-LD</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to JSX">JSX</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Jinja2">Jinja2</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Julia">Julia</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Kotlin">Kotlin</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to LESS">LESS</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to LiveScript">LiveScript</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Lua">Lua</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Markdown">Markdown</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to mIRC">mIRC</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to MariaDB SQL">MariaDB SQL</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Mathematica">Mathematica</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Modelica">Modelica</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to MUMPS">MUMPS</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to MS SQL">MS SQL</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to mbox">mbox</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to MySQL">MySQL</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Nginx">Nginx</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to NSIS">NSIS</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to NTriples">NTriples</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Objective-C">Objective-C</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Objective-C++">Objective-C++</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to OCaml">OCaml</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Octave">Octave</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Oz">Oz</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Pascal">Pascal</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to PEG.js">PEG.js</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Perl">Perl</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to PHP">PHP</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Pig">Pig</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Plain Text">Plain Text</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to PLSQL">PLSQL</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to PostgreSQL">PostgreSQL</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to PowerShell">PowerShell</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Properties files">Properties files</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to ProtoBuf">ProtoBuf</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Python">Python</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Puppet">Puppet</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Q">Q</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to R">R</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to reStructuredText">reStructuredText</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to RPM Changes">RPM Changes</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to RPM Spec">RPM Spec</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Ruby">Ruby</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Rust">Rust</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to SAS">SAS</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Sass">Sass</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Scala">Scala</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Scheme">Scheme</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to SCSS">SCSS</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Shell">Shell</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Sieve">Sieve</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Slim">Slim</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Smalltalk">Smalltalk</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Smarty">Smarty</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Solr">Solr</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to SML">SML</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Soy">Soy</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to SPARQL">SPARQL</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Spreadsheet">Spreadsheet</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to SQL">SQL</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to SQLite">SQLite</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Squirrel">Squirrel</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Stylus">Stylus</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Swift">Swift</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to sTeX">sTeX</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to LaTeX">LaTeX</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to SystemVerilog">SystemVerilog</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Tcl">Tcl</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Textile">Textile</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to TiddlyWiki">TiddlyWiki</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Tiki wiki">Tiki wiki</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to TOML">TOML</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Tornado">Tornado</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to troff">troff</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to TTCN">TTCN</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to TTCN_CFG">TTCN_CFG</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Turtle">Turtle</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to TypeScript">TypeScript</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to TypeScript-JSX">TypeScript-JSX</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Twig">Twig</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Web IDL">Web IDL</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to VB.NET">VB.NET</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to VBScript">VBScript</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Velocity">Velocity</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Verilog">Verilog</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to VHDL">VHDL</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Vue.js Component">Vue.js Component</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to XML">XML</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to XQuery">XQuery</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Yacas">Yacas</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to YAML">YAML</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to Z80">Z80</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to mscgen">mscgen</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to xu">xu</a></li><li><a href="http://localhost:8889/edit/data.csv#" title="Set language to msgenny">msgenny</a></li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lower-header-bar"></div>
+
+
+</div>
+
+<div id="site" style="display: block; height: 476.438px;">
+
+
+<div id="texteditor-backdrop">
+<div id="texteditor-container" class="container"><div class="CodeMirror cm-s-ipython CodeMirror-wrap" style="height: 436.438px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 5.59375px; left: 56px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="display: block; bottom: 0px;"><div style="min-width: 1px; height: 850027px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 52px; margin-bottom: -17px; border-right-width: 33px; min-height: 850028px; padding-right: 17px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>50001</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 17px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">unique_id,amount,date_time_of_pickup,longitude_of_pickup,latitude_of_pickup,longitude_of_dropoff,latitude_of_dropoff,no_of_passenger</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">26:21.0,4.5,2009-06-15 17:26:21 UTC,-73.844311,40.721319,-73.84161,40.712278,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">52:16.0,16.9,2010-01-05 16:52:16 UTC,-74.016048,40.711303,-73.979268,40.782004,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">35:00.0,5.7,2011-08-18 00:35:00 UTC,-73.982738,40.76127,-73.991242,40.750562,2</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">30:42.0,7.7,2012-04-21 04:30:42 UTC,-73.98713,40.733143,-73.991567,40.758092,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">51:00.0,5.3,2010-03-09 07:51:00 UTC,-73.968095,40.768008,-73.956655,40.783762,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">50:45.0,12.1,2011-01-06 09:50:45 UTC,-74.000964,40.73163,-73.972892,40.758233,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">35:00.0,7.5,2012-11-20 20:35:00 UTC,-73.980002,40.751662,-73.973802,40.764842,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">22:00.0,16.5,2012-01-04 17:22:00 UTC,-73.9513,40.774138,-73.990095,40.751048,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">10:00.0,9,2012-12-03 13:10:00 UTC,-74.006462,40.726713,-73.993078,40.731628,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">11:00.0,8.9,2009-09-02 01:11:00 UTC,-73.980658,40.733873,-73.99154,40.758138,2</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">30:50.0,5.3,2012-04-08 07:30:50 UTC,-73.996335,40.737142,-73.980721,40.733559,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">24:00.0,5.5,2012-12-24 11:24:00 UTC,0,0,0,0,3</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">04:03.0,4.1,2009-11-06 01:04:03 UTC,-73.991601,40.744712,-73.983081,40.744682,2</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">54:00.0,7,2013-07-02 19:54:00 UTC,-74.00536,40.728867,-74.008913,40.710907,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">11:05.0,7.7,2011-04-05 17:11:05 UTC,-74.001821,40.737547,-73.99806,40.722788,2</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">57:00.0,5,2013-11-23 12:57:00 UTC,0,0,0,0,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">22:00.0,12.5,2014-02-19 07:22:00 UTC,-73.98643,40.760465,-73.98899,40.737075,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">08:00.0,5.3,2009-07-22 16:08:00 UTC,-73.98106,40.73769,-73.994177,40.728412,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">52:00.0,5.3,2010-07-07 14:52:00 UTC,-73.969505,40.784843,-73.958732,40.783357,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">36:22.0,4,2014-12-06 20:36:22 UTC,-73.979815,40.751902,-73.979446,40.755481,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">18:00.0,10.5,2010-09-07 13:18:00 UTC,-73.985382,40.747858,-73.978377,40.76207,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">15:46.0,11.5,2013-02-12 12:15:46 UTC,-73.957954,40.779252,-73.96125,40.758787,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">17:23.0,4.5,2009-08-06 18:17:23 UTC,-73.991707,40.770505,-73.985459,40.763671,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">29:00.0,4.9,2010-12-06 12:29:00 UTC,-74.000632,40.747473,-73.986672,40.740577,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">26</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">37:00.0,6.1,2009-12-10 15:37:00 UTC,-73.969622,40.756973,-73.981152,40.759712,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">27</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">15:00.0,7.3,2011-06-21 16:15:00 UTC,-73.991875,40.754437,-73.97723,40.774323,3</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">28</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">01:00.0,6.5,2011-02-07 20:01:00 UTC,0,0,0,0,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">29</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">47:00.0,4.5,2011-06-28 19:47:00 UTC,-73.988893,40.76016,-73.986445,40.757857,3</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">30</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">11:20.0,9.3,2012-05-04 06:11:20 UTC,-73.989258,40.690835,-74.004133,40.72569,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">31</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">52:00.0,4.5,2013-08-11 00:52:00 UTC,-73.98102,40.73776,-73.980668,40.730497,2</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">32</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">03:00.0,5.5,2014-02-19 16:03:00 UTC,-73.976075,40.752422,-73.981082,40.759285,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">33</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">46:34.0,22.54,2015-06-21 21:46:34 UTC,-74.01048279,40.71766663,-73.98577118,40.66036606,1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">34</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">10:00.0,31.9,2009-01-09 16:10:00 UTC,-73.873027,40.773883,-73.984545,40.769545,3</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -52px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 39px;">35</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">05:00.0,5.7,2011-09-07 14:05:00 UTC,-73.976162,40.744988,-73.990002,40.738323,2</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 33px; width: 1px; border-bottom: 0px solid transparent; top: 850028px;"></div><div class="CodeMirror-gutters" style="height: 850061px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 51px;"></div></div></div></div></div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+    
+
+
+<script src="./data_files/main.min.js.download" type="text/javascript" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+  function _remove_token_from_url() {
+    if (window.location.search.length <= 1) {
+      return;
+    }
+    var search_parameters = window.location.search.slice(1).split('&');
+    for (var i = 0; i < search_parameters.length; i++) {
+      if (search_parameters[i].split('=')[0] === 'token') {
+        // remote token from search parameters
+        search_parameters.splice(i, 1);
+        var new_search = '';
+        if (search_parameters.length) {
+          new_search = '?' + search_parameters.join('&');
+        }
+        var new_url = window.location.origin + 
+                      window.location.pathname + 
+                      new_search + 
+                      window.location.hash;
+        window.history.replaceState({}, "", new_url);
+        return;
+      }
+    }
+  }
+  _remove_token_from_url();
+</script>
+
+
+</body><script>document.documentElement.style.display = '' </script></html>
